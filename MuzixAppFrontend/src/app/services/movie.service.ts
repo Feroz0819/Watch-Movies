@@ -33,7 +33,7 @@ getRandomMovies(): Observable<any> {
   return forkJoin(requests).pipe(
     map((responses: any[]) => {
       const allMovies = responses.reduce((acc, response) => acc.concat(response.results), []);
-      return allMovies.slice(0, 98); // Select the first 98 movies from the combined list
+      return allMovies.slice(0, 100); // Select the first 100 movies from the combined list
     })
   );
 }
@@ -46,11 +46,11 @@ getMovieDetails(movieId: number): Observable<any> {
   return this.http.get<any>(`${this.baseUrl}/movie/${movieId}?api_key=${this.apiKey}`);
 }
 
-getMovieCast(movieId: number): Observable<any> {
-  return this.http.get(
-    `${this.baseUrl}/movie/${movieId}/credits?api_key=${this.apiKey}`
-  );
-}
+// getMovieCast(movieId: number): Observable<any> {
+//   return this.http.get(
+//     `${this.baseUrl}/movie/${movieId}/credits?api_key=${this.apiKey}`
+//   );
+// }
 
 }
 

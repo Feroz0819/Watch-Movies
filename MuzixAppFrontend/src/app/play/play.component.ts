@@ -4,7 +4,6 @@ import { MovieService } from '../services/movie.service';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
-// import { FavoriteService } from '../services/favorite.service';
 import { FavoritesService } from '../favorites.service';
 
 @Component({
@@ -14,10 +13,6 @@ import { FavoritesService } from '../favorites.service';
 })
 export class PlayComponent {
  movieId: number | undefined;
-
-private favoriteSubject = new BehaviorSubject<boolean>(false);
-favorite$ = this.favoriteSubject.asObservable();
-
  movieDetails:any;
  videoUrl: SafeResourceUrl | null = null;
  cast: any[] = [];
@@ -30,7 +25,7 @@ favorite$ = this.favoriteSubject.asObservable();
    private snackBar: MatSnackBar,
    private sanitizer: DomSanitizer,
    private ac:ActivatedRoute,
-   private favService:FavoritesService) {}
+  private favService:FavoritesService) {}
 
  ngOnInit(): void {
 
@@ -42,7 +37,6 @@ favorite$ = this.favoriteSubject.asObservable();
       this.fetchMovieVideos(this.movieId);
       this.fetchMovieDetails();
       this.fetchRecommendedMovies();
-      this.fetchMovieCast();
     } else {
       console.error('Movie ID is null');
     }
@@ -99,20 +93,20 @@ favorite$ = this.favoriteSubject.asObservable();
    });
  }
 
- fetchMovieCast(): void {
-  if (this.movieId !== undefined) {
-    this.movieService.getMovieCast(this.movieId).subscribe(
-      (response: { crew: any[]; }) => {
-        this.cast = response.crew.filter((cast: any) => cast.profile_path != null);
-      },
-      (error: any) => {
-        console.error('Error fetching movie cast:', error);
-      }
-    );
-  } else {
-    console.error('Invalid movie ID');
-  }
-}
+//  fetchMovieCast(): void {
+//   if (this.movieId !== undefined) {
+//     this.movieService.getMovieCast(this.movieId).subscribe(
+//       (response: { crew: any[]; }) => {
+//         this.cast = response.crew.filter((cast: any) => cast.profile_path != null);
+//       },
+//       (error: any) => {
+//         console.error('Error fetching movie cast:', error);
+//       }
+//     );
+//   } else {
+//     console.error('Invalid movie ID');
+//   }
+// }
  
 
 fetchRecommendedMovies(): void {
@@ -155,7 +149,6 @@ toggleFavorite(movie: any): void {
           duration: 3000,
           panelClass: ['mat-toolbar', 'mat-primary']
         });
-        this.favoriteSubject.next(false);
       },
       error: err => {
         this.snackBar.open('Failed to remove from favorites. Try again later.', 'Failure', {
@@ -173,7 +166,6 @@ toggleFavorite(movie: any): void {
           duration: 3000,
           panelClass: ['mat-toolbar', 'mat-primary']
         });
-        this.favoriteSubject.next(true);
       },
       error: err => {
         this.snackBar.open('Failed to add to favorites. Try again later.', 'Close', {

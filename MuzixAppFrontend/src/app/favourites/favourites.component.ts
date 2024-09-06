@@ -1,9 +1,8 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-// import { FavoriteService } from '../services/favorite.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../services/auth.service';
-import { NgZone } from '@angular/core';
 import { FavoritesService } from '../favorites.service';
+import { NgZone } from '@angular/core';
 
 
 @Component({
@@ -40,7 +39,6 @@ constructor(private favoriteService: FavoritesService, private tokenService: Aut
     movie.showDetails = false;
   }
   removeFavorite(movie: any): void {
-    window.location.reload;
     this.favoriteService.removeFavorite(movie.id).subscribe({
       next: () => {
         window.location.reload();
@@ -49,14 +47,14 @@ constructor(private favoriteService: FavoritesService, private tokenService: Aut
        
 
         this.snackBar.open('Movie removed from favorites!', 'success', {
-          duration: 5000,
+          duration: 2000,
           panelClass: ['mat-toolbar', 'mat-primary']
         });
        
       },
       error: (error: any) => {
         this.snackBar.open('Failed to remove movie from favorites. Please try again later.', 'close', {
-          duration: 5000,
+          duration: 2000,
           panelClass: ['mat-toolbar', 'mat-warn']
         });
         console.error(error);

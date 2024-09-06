@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  
 
  registerForm!: FormGroup;
   hide = true; // For toggling password visibility
@@ -34,7 +33,7 @@ export class RegisterComponent {
         (response) => {
           if (response && response.email) {
             this.snackBar.open(`Hello ${response.username}, you have successfully registered!`, 'Close', {
-              duration: 15000,
+              duration: 15000, // Duration in milliseconds
               verticalPosition: 'top',
               horizontalPosition: 'center'
             });
@@ -49,7 +48,7 @@ export class RegisterComponent {
         },
         (error) => {
           console.error("Registration error: ", error);
-          this.snackBar.open("The email address is already registered,try with some other email address", 'Close', {
+          this.snackBar.open("An error occurred during registration. Please try again later.", 'Close', {
             duration: 15000,
             verticalPosition: 'top',
             horizontalPosition: 'center'

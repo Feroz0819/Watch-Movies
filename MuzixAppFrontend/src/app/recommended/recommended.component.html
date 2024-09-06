@@ -1,27 +1,22 @@
 <div class="recommendations">
     <div class="movie-list">
-
       <mat-card *ngFor="let movie of movies" class="movie-card" (mouseenter)="showDetails(movie)" (mouseleave)="hideDetails(movie)">
         <div class="poster-container">
 
           <img mat-card-image [src]="imgPrefix + movie.poster_path" alt="{{ movie.title }}">
-
           <div class="movie-details" *ngIf="movie.showDetails">
-
             <mat-card-title> <h3>{{ movie.title }}</h3> </mat-card-title>
-
             <mat-card-subtitle>
+
              <small>Release Year: {{ movie.release_date | date: 'yyyy' }} |  Rating: {{ movie.vote_average | number: '1.1-1' }}</small>
               <!-- view button -->
              <button mat-raised-button class="view-button" [routerLink]="['/play', movie.id]">view </button>
              <!-- Favorite Icon -->
-             <button matTooltip="Add to Favorites"  class="favorite-button" (click)="toggleFavorite(movie)"><mat-icon >{{ isFavorite(movie.id) ? 'favorite' : 'favorite_border' }}</mat-icon></button>        
+             <button matTooltip="Add to Favorites"  class="favorite-button" (click)="toggleFavorite(movie)"><mat-icon >{{ isFavorite(movie.id) ? 'favorite' : 'favorite_border' }}</mat-icon></button> 
             </mat-card-subtitle>
-
           </div>
         </div>
       </mat-card>
-
     </div>
-</div>
+  </div>
 

@@ -7,11 +7,12 @@
     color: white; /* White text for contrast */
     text-align: center;
     padding: 20px;
+    /* background-image: url('/assets/movie.jpg');  */
   }
 
   .title {
     margin-bottom: 20px;
-    color: #e50914; 
+    color: #e50914; /* Netflix-like red color for emphasis */
   }
   
   .message {

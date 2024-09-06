@@ -1,83 +1,78 @@
-.eye-icon{
-    position: absolute;
-    cursor: pointer;
-    font-size: 24px;
-    padding: 0em;
-    margin-left: -2em;
-    margin-top: 0.7em;
-  }
-  /* Container for the registration form */
-  .register-container {
-    /* background: rgba(0, 0, 0, 0.7); */
-    background-color: rgba(219, 205, 214, 0.158);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-    /* margin-left: 400px;  */
-    margin-left: 550px; 
-    height: 440px;
-    margin-top: 5em;
-    color: #fff;
-  } 
-  
-  /* Form header */
-   .register-container h2 {
-    margin-top: -15px;
-    margin-bottom: 20px;
-    /* font-size: 24px;*/
-    color: #fff; 
-  } 
-  form{
-    margin-top: 14px;
-    color:#fff;
-  }
-  
-  /* Material form fields styling */
-  .form-group input{
-   
-    margin-bottom: 25px;
-   
-    height: 30px;
-    width: 95%;
-    padding: 5px;
-    border: none;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.1);
- 
-   color: #fff;
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0.1);
-    padding-top: 12px;
-   padding-bottom: 12px;
-  }  
-  .form-group input::placeholder {
-    color: #ddd;
-    padding-left: 10px;
+.register{
+  height: 579px;
 }
-  button{
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 5px;
-    margin-bottom: -10em;
-    color: #fff;
-    /* transition: background-color 0.3s ease; */
-  }
-  
+.eye-icon{
+  position: absolute;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 0em;
+  margin-left: -2em;
+  margin-top: 0.7em;
+}
+/* Container for the registration form */
+.register-container {
+  /* background: rgba(0, 0, 0, 0.7); */
+  background-color: rgba(219, 205, 214, 0.158);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  /* margin-left: 400px;  */
+  margin-left: 550px; 
+  height: 440px;
+  margin-top: 5em;
+  color: #fff;
+} 
 
-  button:enabled {
-    background-color: rgb(164, 57, 75);
-  }
-  
-  
-  /* Focus states */
-   /* mat-form-field.mat-focused .mat-form-field-label {
-    color: #3f51b5 !important;
-  }
-  
-  mat-form-field.mat-focused .mat-form-field-ripple {
-    background-color: #3f51b5 !important;
-  }  */
+/* Form header */
+ .register-container h2 {
+  margin-top: -15px;
+  margin-bottom: 20px;
+  /* font-size: 24px;*/
+  color: #fff; 
+} 
+form{
+  margin-top: 14px;
+  color:#fff;
+}
+
+/* Material form fields styling */
+.form-group input{
+ 
+  margin-bottom: 25px;
+ 
+  height: 30px;
+  width: 95%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+
+ color: #fff;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  padding-top: 12px;
+ padding-bottom: 12px;
+}  
+.form-group input::placeholder {
+  color: #ddd;
+  padding-left: 10px;
+}
+button{
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: -10em;
+  color: #fff;
+  /* transition: background-color 0.3s ease; */
+}
+
+
+button:enabled {
+  background-color: rgb(164, 57, 75);
+}
+
+

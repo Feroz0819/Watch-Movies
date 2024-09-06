@@ -1,9 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MovieService } from '../services/movie.service';
-// import { FavoriteService } from '../services/favorite.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ChangeDetectorRef } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { FavoritesService } from '../favorites.service';
 
 @Component({
@@ -13,31 +10,24 @@ import { FavoritesService } from '../favorites.service';
 })
 export class RecommendedComponent implements OnInit {
 
-  private favoriteSubject = new BehaviorSubject<boolean>(false);
-  favorite$ = this.favoriteSubject.asObservable();
-
   @Input()
   movies: any[] = [];
   imgPrefix: string = 'https://image.tmdb.org/t/p/w500/';
   favoriteMovieList: any[] = [];
   isFavorited: boolean = false;
-  searchText?:string;
+
 
   constructor(
     private movieService: MovieService,
     private favoriteService: FavoritesService,
-    private snackBar: MatSnackBar,
-    private cdRef: ChangeDetectorRef
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
     this.loadMovies();
     this.loadFavoriteMovies();
 
-    this.favorite$.subscribe(isFavorited => {
-      this.isFavorited = isFavorited;
-      this.cdRef.detectChanges();
-    });
+   
   }
 
   search(searchText: any) {
@@ -119,7 +109,7 @@ export class RecommendedComponent implements OnInit {
             panelClass: ['mat-toolbar', 'mat-primary']
           });
            window.location.reload();
-          this.favoriteSubject.next(false);
+    
         },
         error: err => {
           this.snackBar.open('Failed to remove from favorites. Try again later.', 'Failure', {
@@ -138,7 +128,7 @@ export class RecommendedComponent implements OnInit {
             panelClass: ['mat-toolbar', 'mat-primary']
           });
           window.location.reload();
-          this.favoriteSubject.next(true);
+      
         },
         error: err => {
           this.snackBar.open('Failed to add to favorites. Try again later.', 'Close', {

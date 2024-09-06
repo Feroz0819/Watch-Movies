@@ -1,8 +1,12 @@
+<!-- <p>play works!</p> -->
+
 <div class="play-container">
 <div  class="movie-player" *ngIf="videoUrl; else noTrailer">
     <iframe 
+  
       [src]="videoUrl" 
       frameborder="0" 
+    
       allowfullscreen>
     </iframe>
   </div>
@@ -19,7 +23,9 @@
 <div class="movie-overview">
     <h4>{{movieDetails.overview}}</h4>
 </div>
+</div>
 
+ 
     <div class="recommendations">
         <h3 class="section-title">Recommended Movies</h3>
         <div class="movie-list">

@@ -14,19 +14,20 @@ export class FavoritesService {
   // Favorite management methods with JWT token
   addFavorite(movie: any): Observable<any> {
     console.log("inside addfav method",movie);
-    // const url="http://localhost:8082/api/v2/user/saveFavouriteMovie"
-    return this.http.post(`${this.backendBaseUrl}saveFavouriteMovie`,movie);
-    // return this.http.post(url,movie);
+    window.location.reload();
+    const url=`${this.backendBaseUrl}saveFavouriteMovie`
+    return this.http.post(url,movie);
   }
 
   getFavorites(): Observable<any> {
-    return this.http.get(`${this.backendBaseUrl}getAllFavouriteMovies`);
+    const url=`${this.backendBaseUrl}getAllFavouriteMovies`
+    return this.http.get(url)
   }
 
   removeFavorite(id: number): Observable<any> {
-    return this.http.delete(`${this.backendBaseUrl}movies/${id}`);
+    window.location.reload();
+    return this.http.delete(`${this.backendBaseUrl}movies/${id}`); 
     
   }
-
 
 }

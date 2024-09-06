@@ -27,10 +27,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { FavoriteService } from './services/favorite.service';
 import { authInterceptorInterceptor } from './auth-interceptor.interceptor';
-import { PlayComponent } from './play/play.component';
 import { FavoritesService } from './favorites.service';
+import { PlayComponent } from './play/play.component';
 @NgModule({
   declarations: [
     AppComponent,

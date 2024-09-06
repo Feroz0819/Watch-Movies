@@ -1,15 +1,14 @@
 .recommendations {
   padding-top: 1em;
   padding-bottom: 3em;
- 
-  /* background-color: rgba(0, 0, 0, 0.847); */
+
  }
  .section-title {
   margin: 1em;
   width: 20%;
   background-color: rgb(164, 57, 75);
   color: white;
-  font-family: 'Arial', sans-serif; 
+  font-family: 'Arial', sans-serif; /* Replace with your preferred font family */
   padding: 10px;
   margin-bottom: 20px;
   border-top-right-radius: 15px;
@@ -73,8 +72,6 @@
    border: none;
    cursor: pointer;
    color: rgb(205, 15, 46);
-   /* color: rgb(40, 3, 99); */
-   border-width: 10px;
    padding-left: 36px;
    position: absolute;
    margin-top: -17.5em;

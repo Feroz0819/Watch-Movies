@@ -19,13 +19,14 @@ export class NavBarComponent {
       map(result => result.matches),
       shareReplay()
     );
+
   movies: any[] = [];
  
     constructor(
       private movieService: MovieService,
       private searchService: SearchService,
       public authService: AuthService,
-      private router: Router
+    private router: Router
     ) {}
     ngOnInit(): void {
       this.movieService.getRandomMovies().subscribe(
@@ -41,12 +42,19 @@ export class NavBarComponent {
         }
       );
     }
+  
+  
+    private normalizeText(text: string): string {
+      return text.toLowerCase().replace(/\s+/g, ' ').trim();
+    }  
    
     onLogout(): void {
       this.authService.logout();
       window.location.reload();
       this.router.navigate(['/']); // Redirect to home page after logout
-    } 
+    }
+    
+ 
 }
   
 

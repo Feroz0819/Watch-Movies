@@ -19,7 +19,7 @@
     font-size: 20px;
     margin-bottom: 10px;
   }
-
+ 
   .search-bar {
     margin-bottom: 20px;
     width: 40em;
@@ -30,6 +30,7 @@
     border-radius: 10px;
     border-color:black;
   }
+
    
  .favMovies-container{
   padding-top: 1em;

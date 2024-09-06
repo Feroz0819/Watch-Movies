@@ -1,11 +1,4 @@
 
-  .hero-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    background-color: rgba(0, 0, 0, 0.847);
-  }
   .app-header {
     display: flex;
     justify-content: space-between;
@@ -14,14 +7,8 @@
     padding: 10px 20px;
     color: white;
   }
-  .body{
-    background-color: black;
-  }
-  .logo h1 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-  }
+ 
+
   
   .nav-icons {
     display: flex;
@@ -38,6 +25,5 @@
      margin-left: 29em;
      margin-top: 20px;
      }
-
   
-    
+     
