@@ -14,15 +14,13 @@ public class User {
     @Id
     private String email;
     private List<FavouriteMovie> movieDetails;
-//    private String imageUrl;
+
 
     public User( String username, String password, String email, List<FavouriteMovie> movieDetails) {
-//        this.userId = userId;
         this.username = username;
         this.password = password;
         this.email = email;
         this.movieDetails = movieDetails;
-//        this.imageUrl = imageUrl;
     }
 
     public User() {
@@ -31,22 +29,12 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-//                "userId='" + userId + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", movieDetails=" + movieDetails +
-//                ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
-
-//    public String getUserId() {
-//        return userId;
-//    }
-//
-//    public void setUserId(String userId) {
-//        this.userId = userId;
-//    }
 
     public String getUsername() {
         return username;
@@ -80,11 +68,4 @@ public class User {
         this.movieDetails = movieDetails;
     }
 
-//    public String getImageUrl() {
-//        return imageUrl;
-//    }
-//
-//    public void setImageUrl(String imageUrl) {
-//        this.imageUrl = imageUrl;
-//    }
 }

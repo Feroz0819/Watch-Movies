@@ -14,7 +14,5 @@ public interface IUserProxy {
     @PostMapping("/api/v1/save")
     public ResponseEntity<?> saveUser(@RequestBody User user);
 
-    @PutMapping("/api/v1/update")
-    public ResponseEntity<?> updateUser(@RequestBody User user);
 }
 

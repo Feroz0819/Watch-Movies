@@ -39,33 +39,6 @@ public class FavouriteMovieServiceImpl implements IFavouriteMovieService{
         }
         return user1;
     }
-//
-//    @Override
-//    public User updateUser(User user,String userId) throws UserNotFoundException {
-//        User existingUser=iFavouriteMovieRepository.findById(userId).get();
-//        if (existingUser==null){
-//            throw new UserNotFoundException();
-//        }
-//        if (user.getUsername() != null && !user.getUsername().isEmpty()) {
-//            existingUser.setUsername(user.getUsername());
-//        }
-//        if(user.getEmail() != null && !user.getEmail().isEmpty()) {
-//            existingUser.setEmail(user.getEmail());
-//        }
-//        if (user.getPassword() !=null && !user.getPassword().isEmpty()){
-//            existingUser.setPassword(user.getPassword());
-//        }
-//        if (user.getImageUrl() !=null && !user.getImageUrl().isEmpty()){
-//            existingUser.setImageUrl(user.getImageUrl());
-//        }
-//
-//      User user1=  iFavouriteMovieRepository.save(existingUser);
-//
-//        if (!user1.getUserId().isEmpty()){
-//            iUserProxy.updateUser(user);
-//        }
-//        return user1;
-//    }
 
     @Override
     public User saveFavouriteMovieToList(FavouriteMovie favouriteMovie, String email) throws UserNotFoundException, FavouriteMovieAlreadyExistException {
@@ -127,13 +100,4 @@ public class FavouriteMovieServiceImpl implements IFavouriteMovieService{
         }
     }
 
-
-//    @Override
-//    public List<FavouriteMovie> searchMovieFromFavList(String title, String userId) throws UserNotFoundException {
-//        List<FavouriteMovie> movieList = iFavouriteMovieRepository.findByMovieDetails_title(title);
-//        if (movieList.isEmpty()) {
-//            throw new UserNotFoundException();
-//        }
-//        return movieList;
-//    }
 }

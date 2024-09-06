@@ -25,20 +25,6 @@ public class FavouriteMovieController {
         this.iFavouriteMovieService = iFavouriteMovieService;
     }
 
-//    private String getUserIdFromClaims(HttpServletRequest request) {
-//        Claims claims = (Claims) request.getAttribute("claims");
-//        System.out.println("User ID from claims :: " + claims.getSubject());
-//        return claims.getSubject();
-//    }
-
-//    private String getUserIdFromClaims(HttpServletRequest request) {
-//        Claims claims = (Claims) request.getAttribute("claims");
-//        if (claims != null && claims.get("userId") != null) {
-//            return claims.get("userId").toString();
-//        }
-//        return null;
-//    }
-
     private String getEmailFromClaims(HttpServletRequest request) {
         Claims claims = (Claims) request.getAttribute("claims");
         if (claims != null) {
@@ -59,20 +45,6 @@ public class FavouriteMovieController {
         }
         return responseEntity;
     }
-
-//    @PutMapping("/user/update")
-//    public ResponseEntity updateUser(@RequestBody User user, HttpServletRequest request) throws UserNotFoundException {
-//        try {
-//            User updatedUser = iFavouriteMovieService.updateUser(user, getUserIdFromClaims(request));
-//            responseEntity = new ResponseEntity<>("updated", HttpStatus.OK);
-//        } catch (UserNotFoundException e) {
-//            throw new UserNotFoundException();
-//        } catch (Exception e) {
-//            responseEntity = new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//        return responseEntity;
-//    }
-
 
     @PostMapping("/user/saveFavouriteMovie")
     public ResponseEntity<?> saveMovieToUserFavorites(@RequestBody FavouriteMovie favouriteMovie, HttpServletRequest request) throws UserNotFoundException, FavouriteMovieAlreadyExistException {
