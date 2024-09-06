@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MovieService } from '../services/movie.service';
-import { FavoriteService } from '../services/favorite.service';
+// import { FavoriteService } from '../services/favorite.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ChangeDetectorRef } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
   selector: 'app-recommended',
@@ -24,7 +25,7 @@ export class RecommendedComponent implements OnInit {
 
   constructor(
     private movieService: MovieService,
-    private favoriteService: FavoriteService,
+    private favoriteService: FavoritesService,
     private snackBar: MatSnackBar,
     private cdRef: ChangeDetectorRef
   ) {}

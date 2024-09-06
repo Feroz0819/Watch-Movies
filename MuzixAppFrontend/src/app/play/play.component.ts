@@ -4,7 +4,8 @@ import { MovieService } from '../services/movie.service';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FavoriteService } from '../services/favorite.service';
+// import { FavoriteService } from '../services/favorite.service';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
   selector: 'app-play',
@@ -29,7 +30,7 @@ favorite$ = this.favoriteSubject.asObservable();
    private snackBar: MatSnackBar,
    private sanitizer: DomSanitizer,
    private ac:ActivatedRoute,
-   private favService:FavoriteService) {}
+   private favService:FavoritesService) {}
 
  ngOnInit(): void {
 

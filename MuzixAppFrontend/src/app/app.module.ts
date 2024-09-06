@@ -30,6 +30,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FavoriteService } from './services/favorite.service';
 import { authInterceptorInterceptor } from './auth-interceptor.interceptor';
 import { PlayComponent } from './play/play.component';
+import { FavoritesService } from './favorites.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +72,7 @@ import { PlayComponent } from './play/play.component';
   ],
   providers: [
     provideAnimationsAsync(),
-    FavoriteService,
+    FavoritesService,
     {
     provide: HTTP_INTERCEPTORS,
     useClass: authInterceptorInterceptor,

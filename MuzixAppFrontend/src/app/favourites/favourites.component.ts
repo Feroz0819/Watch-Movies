@@ -1,8 +1,9 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { FavoriteService } from '../services/favorite.service';
+// import { FavoriteService } from '../services/favorite.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../services/auth.service';
 import { NgZone } from '@angular/core';
+import { FavoritesService } from '../favorites.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class FavouritesComponent {
  // To use this in your application, you need to prepend to the poster_path to get the full URL of the image.
   favorites: any[] = [];
 
-constructor(private favoriteService: FavoriteService, private tokenService: AuthService, private snackBar:MatSnackBar, private cdr: ChangeDetectorRef,private zone: NgZone ) {}
+constructor(private favoriteService: FavoritesService, private tokenService: AuthService, private snackBar:MatSnackBar, private cdr: ChangeDetectorRef,private zone: NgZone ) {}
 
   ngOnInit(): void {
     if (!this.tokenService.getToken()) {

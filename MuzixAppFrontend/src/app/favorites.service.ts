@@ -1,12 +1,12 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AuthService } from './services/auth.service';
 import { Observable } from 'rxjs';
-import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FavoriteService {
+export class FavoritesService {
 
   private backendBaseUrl = 'http://localhost:8082/api/v2/user/'; 
   constructor(private http: HttpClient,private authService:AuthService) {}
@@ -24,8 +24,9 @@ export class FavoriteService {
   }
 
   removeFavorite(id: number): Observable<any> {
-    return this.http.delete(`http://localhost:8082/api/v2/user/movies/${id}`);
+    return this.http.delete(`${this.backendBaseUrl}movies/${id}`);
     
   }
+
 
 }
