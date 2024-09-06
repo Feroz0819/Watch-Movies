@@ -1,0 +1,9 @@
+<div class="search-container">
+    <mat-form-field class="search-bar">
+      <input matInput [(ngModel)]="searchText" (input)="onSearch()" placeholder="Search for a movie..." />
+    </mat-form-field>
+</div>
+  
+<div>
+<app-recommended  [movies]="filteredMovies"> </app-recommended>
+</div>

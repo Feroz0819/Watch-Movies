@@ -1,0 +1,25 @@
+.page-not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   /* Dark background to match the movie app theme */
+    color: white; /* White text for contrast */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .title {
+    margin-bottom: 20px;
+    color: #e50914; 
+  }
+  
+  .message {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .home-button {
+    color: white;
+  }
+  

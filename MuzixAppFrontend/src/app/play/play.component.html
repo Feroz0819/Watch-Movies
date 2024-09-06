@@ -1,0 +1,56 @@
+<div class="play-container">
+<div  class="movie-player" *ngIf="videoUrl; else noTrailer">
+    <iframe 
+      [src]="videoUrl" 
+      frameborder="0" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div>
+  <ng-template class="no-video-message" #noTrailer >
+    <p>Sorry! Video not available.</p>
+  </ng-template>
+</div>
+  <div *ngIf="movieDetails" class="single-movie-detail">
+    <div class="movie-title">
+        <h2>{{movieDetails.title}} [ {{movieDetails.original_language}} ] | Release Year: {{ movieDetails.release_date | date: 'yyyy' }} |  Rating: {{ movieDetails.vote_average | number: '1.1-1' }} </h2> 
+    </div>
+
+<div class="movie-overview">
+    <h4>{{movieDetails.overview}}</h4>
+</div>
+
+    <div class="recommendations">
+        <h3 class="section-title">Recommended Movies</h3>
+        <div class="movie-list">
+          <mat-card *ngFor="let movie of recommendedMovies" class="movie-card" (mouseenter)="showDetails(movie)" (mouseleave)="hideDetails(movie)">
+            <div class="poster-container">
+    
+              <img mat-card-image [src]="imgPrefix + movie.poster_path" alt="{{ movie.title }}">
+              <div class="movie-details" *ngIf="movie.showDetails">
+                <mat-card-title> <h3>{{ movie.title }}</h3> </mat-card-title>
+                <mat-card-subtitle>
+    
+                 <small>Release Year: {{ movie.release_date | date: 'yyyy' }} |  Rating: {{ movie.vote_average | number: '1.1-1' }}</small>
+                  <!-- view button -->
+                 <button mat-raised-button class="view-button" [routerLink]="['/play', movie.id]">view </button>
+                
+                         <button matTooltip="Add to Favorites" class="favorite-button" (click)="toggleFavorite(movie)">
+                          <mat-icon>
+                            {{ isFavorite(movie.id) ? 'favorite' : 'favorite_border' }}
+                          </mat-icon>
+                        </button>
+                </mat-card-subtitle>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+     
+
+    </div>
+    <ng-template #noRecommended>
+      <div class="no-recommended-message">
+        <p>No recommended movies available.</p>
+      </div>
+    </ng-template>
+  </div>

@@ -1,0 +1,47 @@
+/* .sidenav-container {
+  height: 100%;
+} */
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.mat-icon{
+  padding-right: 5px;
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+  width: 50em;
+  padding-top: 2px;
+}
+.icon-list{
+  display: flex;
+  margin-left: 50em;
+}
+.icon{
+margin-right: 0.5em;
+padding-top: 10px;
+}
+
+.search-container{
+  position: relative;
+  top:20px;
+  left:-12.3em;
+  width: 600px;
+  height: 5em;
+   }
+
+/* .icon-side{
+  margin-top: 25px;
+} */

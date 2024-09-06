@@ -1,0 +1,30 @@
+<div class="fav-comp">
+<div *ngIf="favorites.length === 0" class="no-favorites">
+    <mat-card-content>
+        <h2>No Favorite Movies</h2>
+        <p>You haven't added any movies to your favorites list yet. Start exploring and add some!!!</p>
+      </mat-card-content>
+</div>
+<div class="favMovies-container" *ngIf="favorites.length > 0">
+  <div class="movies-list">
+    <mat-card *ngFor="let movie of favorites" class="movie-card" (mouseenter)="showDetails(movie)" (mouseleave)="hideDetails(movie)">
+      <div class="poster-container">
+        <img mat-card-image *ngIf="movie.poster_path" [src]="imgPrefix + movie.poster_path" alt="{{ movie.title }}">
+        <div class="movie-details" *ngIf="movie.showDetails">
+          <mat-card-title> <h3>{{ movie.title }}</h3> </mat-card-title>
+          <mat-card-subtitle>
+
+           <small>Release Year: {{ movie.release_date | date: 'yyyy' }} |  Rating: {{ movie.vote_average | number: '1.1-1' }}</small>
+            <!-- view button -->
+           <button mat-raised-button class="view-button" [routerLink]="['/play', movie.id]">view </button>
+           <!-- Favorite Icon -->
+           <button  matTooltip="Remove From Favorites"   class="favorit-button" (click)="removeFavorite(movie)">
+            <mat-icon >'favorite'</mat-icon>
+          </button>     
+          </mat-card-subtitle>
+        </div>
+      </div>
+      </mat-card>
+  </div>
+</div>
+</div> 

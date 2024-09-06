@@ -1,0 +1,94 @@
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .fav-comp{
+    height: 650px;
+  }
+  .no-favorites {
+    text-align: center;
+    color: #eae0e7;
+    margin-top: 40px;
+    height: 600px;
+   
+  } 
+ 
+  .no-favorites h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .search-bar {
+    margin-bottom: 20px;
+    width: 40em;
+    margin-left: 20em;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: medium;
+    border-radius: 10px;
+    border-color:black;
+  }
+   
+ .favMovies-container{
+  padding-top: 1em;
+  padding-bottom: 1em;
+ }
+ 
+ .movies-list {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 22px;
+   padding-left: 20px;
+ }
+ 
+ .movie-card {
+   width: 200px;
+   text-align: center;
+   overflow: hidden; /* Ensure content stays within bounds */
+ }
+ 
+ .movie-card img {
+   width: 100%;
+   height: 100%;
+   border-radius: 4px;
+   transition: transform 0.3s ease, filter 0.3s ease; /* Smooth image hover effect */
+ }
+ 
+ .movie-card:hover img {
+   transform: scale(1.05); /* Slight zoom effect on hover */
+  
+ }
+ 
+ .movie-details {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: rgb(164, 57, 75);
+   padding: 15px;
+   transition: opacity 0.3s ease-in-out; /* Smooth transition */
+ }
+ 
+ .movie-card:hover .movie-details {
+   opacity: 1; /* Show details on hover */
+ }
+ 
+ .view-button{
+   margin-top: 0.5em;
+ }
+ 
+ .favorit-button {
+   background: none;
+   border: none;
+   cursor: pointer;
+   color: rgb(205, 15, 46);
+   padding-left: 36px;
+   position: absolute;
+   margin-top: -17.5em;
+ }
+ 
+  
+ 
+  

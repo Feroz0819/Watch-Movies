@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+</button>
+  <a routerLink="/" style="  font-family: 'Mynerve'">MuziX</a>
+  
+<div class="icon-list">
+  <div class="icon" routerLink="home"> <mat-icon matTooltip="home">home</mat-icon> </div>
+ <div  class="icon" routerLink="favorites"><mat-icon matTooltip="favorites">favorite</mat-icon> </div>
+<!-- Conditionally display Sign-In button -->
+<div *ngIf="!authService.isLoggedIn()" class="icon" routerLink="login">
+  <mat-icon class="login-icon" matTooltip="sign in">person</mat-icon>
+</div>
+<!-- Conditionally display Logout button -->
+<div *ngIf="authService.isLoggedIn()" class="icon" (click)="onLogout()">
+  <mat-icon matTooltip="logout">logout</mat-icon></div>
+
+</div>
+ 
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="'navigation'"
+      [mode]="'push'"
+      [opened]=" false" >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="home">Home</a>
+      <a mat-list-item routerLink="favorites">Favorites</a>
+      <!-- Show 'Sign in' if user is not logged in, otherwise show 'Logout' -->
+      <a *ngIf="!authService.isLoggedIn()" mat-list-item routerLink="login">Sign in</a>
+      <a *ngIf="authService.isLoggedIn()" mat-list-item (click)="onLogout()">Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content style="background-color:black">
+     <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
